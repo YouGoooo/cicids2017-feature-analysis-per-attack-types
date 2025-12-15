@@ -1,0 +1,15 @@
+# Ignorer les données
+data/*.csv
+data/*.pcap
+*.csv
+
+# Ignorer les résultats générés
+results/
+__pycache__/
+.DS_Store
+.ipynb_checkpoints
+*.png
+
+# Ignorer les environnements virtuels
+venv/
+env/

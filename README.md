@@ -31,7 +31,7 @@ By aggregating these scores, the project builds a consensus signature for each a
 1. Clone this repository:
 
    ```bash
-   git clone [https://github.com/YouGoooo/cicids2017-feature-analysis-per-attack-types.git](https://github.com/YouGoooo/cicids2017-feature-analysis-per-attack-types.git)
+   git clone https://github.com/YouGoooo/cicids2017-feature-analysis-per-attack-types.git
    cd cicids2017-feature-analysis-per-attack-types
    ```
 

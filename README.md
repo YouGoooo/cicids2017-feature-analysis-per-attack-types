@@ -39,6 +39,10 @@ By aggregating these scores, the project builds a consensus signature for each a
    ```bash
    pip install -r requirements.txt
    ```
+## Dataset Preparation
+
+Due to the size of the CICIDS2017 dataset, you will need to generate the csv file on kaggle by
+following the steps explained in the file `Genarate_Dataset_on_kaggle.ipynb` located in the folder `data/`
 
 ## Usage
 

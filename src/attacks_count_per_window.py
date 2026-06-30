@@ -7,11 +7,15 @@ import matplotlib.pyplot as plt
 # Parameters (keep same window sizing as original script)
 INPUT_CSV = './data/cicids2017_filtered.csv'
 OUT_DIR = './results'
+CSV_DIR = os.path.join(OUT_DIR, 'csv')
+PNG_DIR = os.path.join(OUT_DIR, 'png')
 WINDOW_SIZE = 50000
 STEP = WINDOW_SIZE          # keep same behaviour (set < WINDOW_SIZE for overlap)
 LABEL_COL = 'Attack Type'
 
 os.makedirs(OUT_DIR, exist_ok=True)
+os.makedirs(CSV_DIR, exist_ok=True)
+os.makedirs(PNG_DIR, exist_ok=True)
 
 print("Loading dataset:", INPUT_CSV)
 df = pd.read_csv(INPUT_CSV)
@@ -80,8 +84,8 @@ print("="*50)
 print(f"Computed counts and percentages in {time.perf_counter()-t0:.2f}s")
 
 # Save CSV outputs
-csv_counts = os.path.join(OUT_DIR, 'attacks_count_per_window.csv')
-csv_percent = os.path.join(OUT_DIR, 'attacks_percent_per_window.csv')
+csv_counts = os.path.join(CSV_DIR, 'attacks_count_per_window.csv')
+csv_percent = os.path.join(CSV_DIR, 'attacks_percent_per_window.csv')
 counts_df.to_csv(csv_counts)
 percent_df.to_csv(csv_percent)
 print("Saved counts csv:", csv_counts)
@@ -98,7 +102,7 @@ plt.yticks(range(len(attack_types)), attack_types, fontsize=8)
 plt.xticks(range(len(cols)), cols, rotation=45, ha='right', fontsize=8)
 plt.title('Attack counts per window (log scale)')
 plt.tight_layout()
-png_heat = os.path.join(OUT_DIR, 'attacks_count_per_window_heatmap.png')
+png_heat = os.path.join(PNG_DIR, 'attacks_count_per_window_heatmap.png')
 plt.savefig(png_heat, dpi=150)
 plt.close(fig)
 print("Saved heatmap:", png_heat)
